@@ -1,28 +1,62 @@
 ﻿// Из имеющегося массива строк сформировать массив строк длина которых меньше или равна 3.
-Console.WriteLine("Hello, World!");
-string [] str= {"Массив", "из" , "трех", "строк"};
-Console.WriteLine("Исходный массив");
-for (int i = 0; i < str.Length; i++)
+
+void FillArray(string []array)
 {
-    Console.Write(str[i]+" ");
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write(array[i]+" ");
 }
 Console.WriteLine("\n");
+}
 
-int count=0;
-string [] result = new string [str.Length];
-for (int i = 0; i < str.Length; i++)
+string [] ArrayCount(string[]array)
 {
-    if (str[i].Length<=3)
+int count=0;
+string [] result = new string [array.Length];
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i].Length<=3)
     {
         count=count+1;
-        result[i-1]=str[i];   
+        result[i-1]=array[i];   
     }
 }
-Console.WriteLine(count);
+return result;
+}
+int ArrayLengthCount(string[]array)
+{
+int count=0;
+string [] result = new string [array.Length];
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i].Length<=3)
+    {
+        count=count+1;
+        result[i-1]=array[i];   
+    }
+}
+return count;
+}
 
-Console.WriteLine("Новый массив");
+
+void PrintArray(string[]array,int count)
+{
 for (int i = 0; i < count; i++)
 {
-    Console.Write(result[i]+" ");
+    Console.Write(array[i]+" ");
 }
 Console.WriteLine("\n");
+}
+
+string [] str= {"Массив", "из" , "трех", "строк"};
+Console.WriteLine("Исходный массив");
+FillArray(str);
+string[] newarray=ArrayCount(str);
+int value=ArrayLengthCount(str);
+Console.WriteLine("Новый массив");
+PrintArray(newarray,value);
+
+
+
+
+
