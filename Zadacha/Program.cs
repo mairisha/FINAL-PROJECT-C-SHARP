@@ -28,7 +28,6 @@ string[] CheckArray(string[] array)
 int CheckCount(string[] array)
 {
     int count = 0;
-    string[] result = new string[array.Length];
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i].Length <= 3)
@@ -42,7 +41,7 @@ int CheckCount(string[] array)
 string[] FillNewArray(string[] array, int count)
 {
     string[] NewArray = new string[count];
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < count; i++)
     {
         NewArray[i] = array[i];
     }
